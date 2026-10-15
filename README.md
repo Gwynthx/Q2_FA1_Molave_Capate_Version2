@@ -1,4 +1,4 @@
-# Creating a Modular Mini-Program Version 2 *
+# Creating a Modular Mini-Program Version 2
 def add_numbers(num1, num2):
     return num1 + num2
 
@@ -32,19 +32,24 @@ def get_choice():
             return choice
         print("Invalid choice. Try again.")
 
+def main():
+    choice = get_choice()
+    num1 = get_number("Enter the first number: ")
+    num2 = get_number("Enter the second number: ")
 
-choice = get_choice()
-num1 = get_number("Enter the first number: ")
-num2 = get_number("Enter the second number: ")
+    if choice == "1":
+        result = add_numbers(num1, num2)
+    elif choice == "2":
+        result = subtract_numbers(num1, num2)
+    elif choice == "3":
+        result = multiply_numbers(num1, num2)
+    else:
+        result = divide_numbers(num1, num2)
 
-if choice == "1":
-    print("Result:", add(num1, num2))
-elif choice == "2":
-    print("Result:", subtract(num1, num2))
-elif choice == "3":
-    print("Result:", multiply(num1, num2))
-else:  # choice == "4"
-    if num2 == 0:
+    if result is None:
         print("Cannot divide by zero")
     else:
-        print("Result:", divide(num1, num2))
+        print("Result:", result)
+
+if __name__ == "__main__":
+    main()
