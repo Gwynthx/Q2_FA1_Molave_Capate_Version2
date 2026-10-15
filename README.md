@@ -37,7 +37,7 @@ def main():
     num1 = get_number("Enter the first number: ")
     num2 = get_number("Enter the second number: ")
 
-    if choice == "1":
+if choice == "1":
         result = add_numbers(num1, num2)
     elif choice == "2":
         result = subtract_numbers(num1, num2)
@@ -46,7 +46,7 @@ def main():
     else:
         result = divide_numbers(num1, num2)
 
-    if result is None:
+ if result is None:
         print("Cannot divide by zero")
     else:
         print("Result:", result)
